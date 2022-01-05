@@ -1,3 +1,21 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  # 顧客用
+  # URL /customers/sign_in ...
+  devise_for :customers,skip: [:passwords,], controllers: {
+    registrations: "public/registrations",
+    sessions: 'public/sessions'
+  }
+
+  root to: "public/homes#top"
+  get "/about", to: "public/homes#about"
+
+  namespace :public do
+    resources :customers, only: [:show, :edit, :update]
+    resources :posts
+    resources :contacts, only: [:index]
+  end
+
 end
