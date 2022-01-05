@@ -22,3 +22,39 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #FF8C00;
+  border-radius: 45px 45px;
+}
+
+.navbar-nav li a{
+	position: relative;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.navbar-nav li.current a,
+.navbar-nav li a:hover{
+	color: #fff;
+}
+
+.navbar-nav li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: white;
+    transition: all .3s;
+    transform: scale(0, 1);
+    transform-origin: center top;
+}
+
+.navbar-nav li.current a::after,
+.navbar-nav li :hover::after {
+    transform: scale(1, 1);
+}
