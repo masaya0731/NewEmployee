@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  # 管理者用
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   # 顧客用
   # URL /customers/sign_in ...
   devise_for :customers,skip: [:passwords,], controllers: {
