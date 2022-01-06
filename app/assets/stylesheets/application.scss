@@ -23,38 +23,74 @@
   box-sizing: border-box;
 }
 
-header {
-  width: 90%;
-  margin: 0 auto;
-  background-color: #FF8C00;
-  border-radius: 45px 45px;
+html {
+  position: relative;
 }
 
-.navbar-nav li a{
+header {
+  width: 94%;
+  background-color: #00CC00;
+  border-radius: 45px 45px;
+  position: relative;
+  left: 40px;
+  z-index: 1;
+}
+
+.navbar-nav li a {
 	position: relative;
 	text-decoration: none;
 	display: inline-block;
 }
 
 .navbar-nav li.current a,
-.navbar-nav li a:hover{
+.navbar-nav li a:hover {
 	color: #fff;
 }
 
 .navbar-nav li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    width: 80%;
-    height: 2px;
-    background: white;
-    transition: all .3s;
-    transform: scale(0, 1);
-    transform-origin: center top;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: white;
+  transition: all .3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
 }
 
 .navbar-nav li.current a::after,
 .navbar-nav li :hover::after {
     transform: scale(1, 1);
 }
+
+.navbar-brand h2 {
+  color: white;
+  font-family: Comic Sans MS;
+}
+
+#container {
+    height: 700px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    background-size: cover;
+  }
+
+  .top-image1 {
+    background-image: url(test1.jpg);
+  }
+  .top-image2 {
+    background-image: url(test2.jpg);
+  }
+  .top-image3 {
+    background-image: url(test3.jpg);
+  }
+  .top-image4 {
+    background-image: url(test4.jpg);
+  }
+  .top-image5 {
+    background-image: url(test5.jpg);
+  }
