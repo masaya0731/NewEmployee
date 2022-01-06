@@ -16,6 +16,7 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
 
 * {
   margin: 0;
@@ -67,11 +68,12 @@ header {
 
 .navbar-brand h2 {
   color: white;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 
 #container {
-  height: 550px;
+  height: 600px;
   width: 100%;
   position: absolute;
   top: 0;

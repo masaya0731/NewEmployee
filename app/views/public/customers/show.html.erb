@@ -2,9 +2,10 @@
   <div class="row">
     <div class="kokuban-s2 mt-5 col-md-4">
       <%= attachment_image_tag @customer, :profile_image, size: "100x100", fallback: "no_image.jpg" %><br>
-      <%= @customer.name %><br>
-      <p>自己紹介</p>
-      <%= @customer.introduction %>
+      <div class="mt-3"><%= @customer.name %><br></div>
+      <p class="mt-3">自己紹介</p>
+      <%= @customer.introduction %><br>
+      <%= link_to "プロフィールを編集する", edit_public_customer_path, class: "font-weight-bold text-success btn btn-light", style: "text-decoration: none;" %>
     </div>
     <div class="col-6">
   </div>

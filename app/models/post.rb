@@ -8,4 +8,8 @@ class Post < ApplicationRecord
   belongs_to :customers
   belongs_to :category
 
+  validates :title, presence: true
+  validates :body, presence: true
+
+
 end
