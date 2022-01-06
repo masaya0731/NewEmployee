@@ -1,27 +1,29 @@
 <div class="container mt-3">
-  <div class="row offset-4">
-    <h2 class="col-12">ログイン</h2>
-    <%= form_with model: @customer, url: customer_session_path, local: true do |f| %>
+  <div class="row">
+    <div class="kokuban-s3 mt-3">
+      <h2 class="col-12 text-white">ログイン</h2>
+      <%= form_with model: @customer, url: customer_session_path, local: true do |f| %>
 
-      <div class="field row form-group mt-3">
-        <%= f.label :メールアドレス, class: "col-12" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="field row form-group">
-        <%= f.label :パスワード, class: "col-12" %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="field row form-group">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+        <div class="field row form-group mt-3">
+          <%= f.label :メールアドレス, class: "col-12" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
-      <% end %>
 
-      <div class="actions row">
-        <%= f.submit "ログイン" %>
+        <div class="field row form-group">
+          <%= f.label :パスワード, class: "col-12" %><br />
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field row form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions row">
+          <%= f.submit "ログイン", class: "text-white" %>
+        </div>
       </div>
     <% end %>
   </div>

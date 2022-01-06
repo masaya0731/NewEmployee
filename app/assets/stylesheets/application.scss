@@ -30,7 +30,7 @@ html {
 header {
   width: 96%;
   margin: 0 auto;
-  background-color: green;
+  background-color: #006633;
   border-radius: 45px 45px;
   position: relative;
   z-index: 1;
@@ -62,7 +62,7 @@ header {
 
 .navbar-nav li.current a::after,
 .navbar-nav li :hover::after {
-    transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 
 .navbar-brand h2 {
@@ -71,26 +71,62 @@ header {
 
 
 #container {
-    height: 700px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 0;
-    background-size: cover;
-  }
+  height: 550px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  background-size: cover;
+}
 
-  .top-image1 {
-    background-image: url(top-image1.jpg);
-  }
-  .top-image2 {
-    background-image: url(top-image2.jpg);
-  }
-  .top-image3 {
-    background-image: url(top-image3.jpg);
-  }
-  .top-image4 {
-    background-image: url(top-image4.jpg);
-  }
-  .top-image5 {
-    background-image: url(top-image5.jpg);
-  }
+.top-image1 {
+  background-image: url(top-image1.jpg);
+}
+.top-image2 {
+  background-image: url(top-image2.jpg);
+}
+.top-image3 {
+  background-image: url(top-image3.jpg);
+}
+.top-image4 {
+  background-image: url(top-image4.jpg);
+}
+.top-image5 {
+  background-image: url(top-image5.jpg);
+}
+
+.kokuban-s2 {
+  padding: 1em;
+  background: #006633;
+  color: #fff;
+  border: 8px solid #b2771f;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+  font-size: 20px;
+}
+
+.kokuban-s3 {
+  padding: 1em;
+  background: #006633;
+  color: #fff;
+  border: 8px solid #b2771f;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+  margin: 0 auto;
+  padding-left: 100px;
+}
+
+.kokuban-s4 {
+  padding: 1em;
+  background: #006633;
+  color: #fff;
+  border: 8px solid #b2771f;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+  margin: 0 auto;
+}
+
+.about-heading {
+  border-bottom: 3px solid #fff;
+  display: inline-block;
+}
