@@ -30,7 +30,7 @@ html {
 header {
   width: 96%;
   margin: 0 auto;
-  background-color: #FF773E;
+  background-color: green;
   border-radius: 45px 45px;
   position: relative;
   z-index: 1;
@@ -67,7 +67,6 @@ header {
 
 .navbar-brand h2 {
   color: white;
-  font-family: Comic Sans MS;
 }
 
 #container {
@@ -80,17 +79,17 @@ header {
   }
 
   .top-image1 {
-    background-image: url(test1.jpg);
+    background-image: url(top-image1.jpg);
   }
   .top-image2 {
-    background-image: url(test2.jpg);
+    background-image: url(top-image2.jpg);
   }
   .top-image3 {
-    background-image: url(test3.jpg);
+    background-image: url(top-image3.jpg);
   }
   .top-image4 {
-    background-image: url(test4.jpg);
+    background-image: url(top-image4.jpg);
   }
   .top-image5 {
-    background-image: url(test5.jpg);
+    background-image: url(top-image5.jpg);
   }
