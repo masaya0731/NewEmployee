@@ -34,7 +34,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.2]
 
       t.string :name
       t.text :introduction
-      t.string :profile_image
+      t.string :profile_image_id
 
       t.timestamps null: false
     end
