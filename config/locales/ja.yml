@@ -1,0 +1,15 @@
+  ja:
+    activerecord:
+      attributes:
+        customer:
+          name: ユーザー名
+          introduction: 自己紹介
+          email: メールアドレス
+          password: パスワード
+
+        post:
+          title: タイトル
+          body: 投稿内容
+
+        post_comment:
+          body: コメント内容

@@ -3,7 +3,7 @@
     <div class="kokuban-s3 mt-3">
     <h2 class="col-12 text-white">新規ユーザー登録</h2>
     <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
-      <%= render "public/shared/error_messages", resource: resource %>
+     <%= render 'layouts/error_messages', model: f.object %>
 
       <div class="field row form-group mt-3">
         <%= f.label :プロフィール画像, class: "col-12" %>
@@ -16,7 +16,7 @@
       </div>
 
       <div class="field form-group row">
-        <%= f.label :自己紹介, class: "col-12" %><br />
+        <%= f.label :自己紹介（100文字以内）, class: "col-12" %><br />
         <%= f.text_area :introduction, autofocus: true %>
       </div>
 
@@ -26,10 +26,7 @@
       </div>
 
       <div class="field form-group row">
-        <%= f.label :パスワード, style: "padding-left: 15px" %>
-        <% if @minimum_password_length %>
-        <p>（<%= @minimum_password_length %> 文字以上）</p>
-        <% end %><br />
+        <%= f.label :パスワード（6文字以上）, class: "col-12" %>
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
 
@@ -38,7 +35,7 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
-      <div class="actions row">
+      <div class="row">
         <%= f.submit "新規登録", class: "text-white" %>
       </div>
 

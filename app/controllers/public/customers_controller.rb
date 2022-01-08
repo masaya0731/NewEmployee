@@ -9,9 +9,9 @@ class Public::CustomersController < ApplicationController
   end
 
   def update
-    customer = Customer.find(params[:id])
-    if customer.update(customer_params)
-      redirect_to public_customer_path
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+      redirect_to public_customer_path(@customer.id)
     else
       render :edit
     end
@@ -19,6 +19,6 @@ class Public::CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:name, :introduction, :profile_image)
+    params.require(:customer).permit(:name, :introduction, :profile_image, :email)
   end
 end

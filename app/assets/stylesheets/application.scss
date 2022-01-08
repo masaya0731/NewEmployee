@@ -126,11 +126,7 @@ header {
   margin: 0 auto;
 }
 
-//マイページ
-.my-page-heading {
-  border-bottom: 3px solid #fff;
-  display: inline-block;
-}
+// マイページ
 
 .customer_plofile_image {
   border-radius: 50%;
@@ -143,4 +139,17 @@ header {
   border: 8px solid #b2771f;
   border-radius: 3px;
   box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+}
+
+// ユーザー編集画面
+
+.kokuban-s6 {
+  padding: 1em;
+  background: #006633;
+  color: #fff;
+  border: 8px solid #b2771f;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+  margin: 0 auto;
+  padding-left: 50px;
 }
