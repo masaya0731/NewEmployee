@@ -28,6 +28,7 @@ html {
   position: relative;
 }
 
+// ヘッダー
 header {
   width: 96%;
   margin: 0 auto;
@@ -71,7 +72,7 @@ header {
   font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-
+// topページ
 #container {
   height: 600px;
   width: 100%;
@@ -97,16 +98,7 @@ header {
   background-image: url(top-image5.jpg);
 }
 
-.kokuban-s2 {
-  padding: 1em;
-  background: #006633;
-  color: #fff;
-  border: 8px solid #b2771f;
-  border-radius: 3px;
-  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
-  font-size: 20px;
-}
-
+// ログインページ
 .kokuban-s3 {
   padding: 1em;
   background: #006633;
@@ -116,6 +108,12 @@ header {
   box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
   margin: 0 auto;
   padding-left: 100px;
+}
+
+// aboutページ
+.about-heading {
+  border-bottom: 3px solid #fff;
+  display: inline-block;
 }
 
 .kokuban-s4 {
@@ -128,7 +126,21 @@ header {
   margin: 0 auto;
 }
 
-.about-heading {
+//マイページ
+.my-page-heading {
   border-bottom: 3px solid #fff;
   display: inline-block;
+}
+
+.customer_plofile_image {
+  border-radius: 50%;
+}
+
+.kokuban-s5 {
+  padding: 1em;
+  background: #006633;
+  color: #fff;
+  border: 8px solid #b2771f;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
 }
