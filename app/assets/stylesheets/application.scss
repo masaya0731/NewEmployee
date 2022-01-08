@@ -35,6 +35,7 @@ html {
 }
 
 // ヘッダー
+
 header {
   width: 96%;
   margin: 0 auto;
@@ -79,6 +80,7 @@ header {
 }
 
 // topページ
+
 #container {
   height: 600px;
   width: 100%;
@@ -117,6 +119,7 @@ header {
 }
 
 // aboutページ
+
 .about-heading {
   border-bottom: 3px solid #fff;
   display: inline-block;
@@ -147,6 +150,10 @@ header {
   box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
 }
 
+.mypage-post-title {
+  display: inline-block;
+}
+
 // ユーザー編集画面
 
 .kokuban-s6 {
@@ -172,3 +179,5 @@ header {
   box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
   margin: 0 auto;
 }
+
+//　投稿詳細画面
