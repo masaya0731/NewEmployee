@@ -1,13 +1,21 @@
 <div class="container">
+  <div class="text-success mt-1"><strong><%= flash[:success] %></strong></div>
   <div class="row">
     <div class="kokuban-s5 mt-5 col-md-4">
-      <h3 class="text-white my-page-heading">マイページ</h3><br>
+      <h3 class="text-white my-page-heading">プロフィール</h3><br>
       <%= attachment_image_tag @customer, :profile_image, size: "100x100", fallback: "no_image.jpg", class: "mt-3 customer_plofile_image" %><br>
-      <div class=""><%= @customer.name %><br></div>
+      <%= @customer.name %><br>
       <p class="mt-3">自己紹介</p>
       <div><%= @customer.introduction %></div><br>
       <%= link_to "プロフィールを編集する", edit_public_customer_path, class: "font-weight-bold text-success btn btn-light mt-3", style: "text-decoration: none;" %>
     </div>
-    <div class="col-6">
+    <div class="kokuban-s5 col-md-7 mt-5 offset-1">
+      <h3 class="text-white">投稿一覧</h3>
+      <% @posts.each do |post| %>
+        <%= link_to public_post_path(post.id) do %>
+          <span class="text-white"><%= post.title %></span><br>
+        <% end %>
+      <% end %>
+    <div>
   </div>
 </div>

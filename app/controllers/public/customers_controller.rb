@@ -2,6 +2,7 @@ class Public::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    @posts = Post.all
   end
 
   def edit
@@ -12,6 +13,7 @@ class Public::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
       redirect_to public_customer_path(@customer.id)
+      flash[:success] = "プロフィールを変更しました"
     else
       render :edit
     end
@@ -19,6 +21,6 @@ class Public::CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:name, :introduction, :profile_image, :email)
+    params.require(:customer).permit(:name, :introduction, :profile_image, :email, :password)
   end
 end

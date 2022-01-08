@@ -5,11 +5,10 @@ class Post < ApplicationRecord
   has_many :post_cpmments, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
-  belongs_to :customers
-  belongs_to :category
+  belongs_to :customer, optional: true
+  belongs_to :category, optional: true
 
   validates :title, presence: true
   validates :body, presence: true
-
 
 end

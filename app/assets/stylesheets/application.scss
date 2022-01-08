@@ -28,6 +28,12 @@ html {
   position: relative;
 }
 
+// エラーメッセージ
+
+.error-message {
+  display: inline-block;
+}
+
 // ヘッダー
 header {
   width: 96%;
@@ -152,4 +158,17 @@ header {
   box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
   margin: 0 auto;
   padding-left: 50px;
+}
+
+// 新規投稿画面
+
+.kokuban-s7 {
+  width: 80%;
+  padding: 1em;
+  background: #006633;
+  color: #fff;
+  border: 8px solid #b2771f;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+  margin: 0 auto;
 }
