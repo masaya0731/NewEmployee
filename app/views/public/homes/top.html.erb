@@ -9,3 +9,12 @@
     </div>
   </div>
 </div>
+<div class="container" style="padding-top: 1000px;">
+    <div class="row">
+  <% @posts.each do |post| %>
+        <%= link_to public_post_path(post.id) do %>
+          <div class="mypage-post-title mt-3"><%= post.title %></div><br>
+        <% end %>
+      <% end %>
+      </div>
+      </div>

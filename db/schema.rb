@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2022_01_05_083703) do
   end
 
   create_table "notifications", force: :cascade do |t|
+    t.integer "post_id"
     t.integer "post_comment_id"
     t.integer "visitor_id"
     t.integer "visited_id"
@@ -82,7 +83,7 @@ ActiveRecord::Schema.define(version: 2022_01_05_083703) do
     t.integer "customer_id"
     t.integer "post_id"
     t.text "body"
-    t.string "comment_image"
+    t.string "comment_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -92,7 +93,7 @@ ActiveRecord::Schema.define(version: 2022_01_05_083703) do
     t.integer "category_id"
     t.string "title"
     t.text "body"
-    t.string "post_image"
+    t.string "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

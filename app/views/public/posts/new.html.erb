@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row mt-5">
-    <div class="kokuban-s7">
+    <div class="kokuban-s7 col-12">
       <h3 class="col-12 text-white">新規投稿</h3>
       <%= form_with model:@post, url: public_posts_path, local: true do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
