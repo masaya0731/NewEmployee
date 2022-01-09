@@ -11,7 +11,7 @@
       <%= link_to "プロフィールを編集する", edit_public_customer_path, class: "font-weight-bold text-success btn btn-light mt-3", style: "text-decoration: none;" %>
     </div>
     <div class="kokuban-s5 col-md-7 mt-5 offset-1">
-      <h3 class="text-white">投稿一覧</h3>
+      <h3 class="text-white">投稿タイトル一覧</h3>
       <% @posts.each do |post| %>
         <%= link_to public_post_path(post.id) do %>
           <div class="text-white mypage-post-title mt-3"><%= post.title %></div><br>
