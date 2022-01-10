@@ -1,8 +1,9 @@
 class Public::CustomersController < ApplicationController
+  before_action :authenticate_customer!, except: [:show]
 
   def show
     @customer = Customer.find(params[:id])
-    @posts = @customer.posts
+    @posts = @customer.posts.order(id: "DESC")
   end
 
   def edit
