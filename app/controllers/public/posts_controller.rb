@@ -20,7 +20,6 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post.customer_id = current_customer.id
     @customer = Customer.find(@post.customer_id)
   end
 
