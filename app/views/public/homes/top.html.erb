@@ -10,15 +10,20 @@
   </div>
 </div>
 <div class="container">
-  <div class="row mt-5">
+  <div class="row">
      <div class="kokuban-s0 col-md-3">
-       <h4 class="text-white">カテゴリー</h4><br>
-       <%= @categorys.each do |category| %>
+       <h4 class="text-white text-center">カテゴリー</h4><br>
+       <% @categorys.each do |category| %>
          <%= category.name %>
        <% end %>
     </div>
     <div class="kokuban-s0 offset-1 col-md-8">
-      <h4 class="text-white">投稿一覧</h4><br>
+      <h4 class="text-white text-center">投稿一覧</h4><br>
+    </div>
+    <div class="kokuban-s00 offset-4 col-md-8 mt-3">
+      <% @customers.each do |customer| %>
+        <%#= attachment_image_tag @customer, :plofile_image, size: "50x50", fallback: "no_image.jpeg", class: "mt-3 customer_plofile_image" %><br>
+      <% end %>
       <% @posts.each do |post| %>
         <%= link_to public_post_path(post.id) do %>
           <p class="mypage-post-title mt-3 text-white"><%= post.title %></p><br>

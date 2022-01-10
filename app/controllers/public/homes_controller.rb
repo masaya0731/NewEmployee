@@ -1,8 +1,9 @@
 class Public::HomesController < ApplicationController
 
   def top
+    @post = Post.where(params[:id])
     @posts = Post.all
-    @customer = current_customer
+    @customers = Customer.all
     @categorys = Category.all
   end
 

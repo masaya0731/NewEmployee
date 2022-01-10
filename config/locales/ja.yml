@@ -13,3 +13,9 @@
 
         post_comment:
           body: コメント内容
+          
+        contact:
+          name: お名前
+          email: メールアドレス
+          title: 件名
+          body: お問い合わせ内容
