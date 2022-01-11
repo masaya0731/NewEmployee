@@ -2,6 +2,8 @@ class Public::PostsController < ApplicationController
   before_action :authenticate_customer!, except: [:index, :show]
 
   def index
+    @posts = Post.all.order(id: 'DESC')
+    @categorys = Category.all
   end
 
   def new
@@ -22,10 +24,13 @@ class Public::PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @customer = Customer.find(@post.customer_id)
+    @post_comment = PostComment.new
   end
 
   def edit
     @post = Post.find(params[:id])
+    #ログインユーザーと検索した投稿が紐づいていなければマイページに遷移させる
+    redirect_to public_customer_path(current_customer) unless @post.customer == current_customer
   end
 
   def update

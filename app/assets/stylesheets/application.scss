@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  background-color: #DDDDDD;
+  background-color: #FDF5E6;
 }
 
 // エラーメッセージ
@@ -113,22 +113,24 @@ header {
 .kokuban-s0 {
   width: 100%;
   padding: 1em;
-  background: #006633;
-  color: #fff;
-  border: 8px solid #b2771f;
   border-radius: 3px;
-  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+  background: white;
   margin-top: 550px;
 }
 
 .kokuban-s00 {
   width: 100%;
   padding: 1em;
-  background: #006633;
-  color: #fff;
-  border: 8px solid #b2771f;
+  background-color: white;
   border-radius: 3px;
-  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+}
+
+.top-page-post-title {
+  display: inline-block;
+}
+
+.top-page-profile-image {
+  border-radius: 50%;
 }
 
 // ログインページ
@@ -191,6 +193,17 @@ header {
   margin: 0 auto;
   padding-left: 50px;
 }
+
+//　投稿一覧画面
+
+.kokuban-s10 {
+  width: 100%;
+  padding: 1em;
+  border-radius: 3px;
+  background: white;
+  margin-top: 50px;
+}
+
 
 // 新規投稿画面
 

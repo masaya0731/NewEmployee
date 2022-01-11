@@ -8,6 +8,8 @@ class Public::CustomersController < ApplicationController
 
   def edit
     @customer = Customer.find(params[:id])
+    #ログインユーザーと検索したユーザーのIDが一致しなければマイページに遷移させる
+    redirect_to public_customer_path(current_customer) unless @customer == current_customer
   end
 
   def update
