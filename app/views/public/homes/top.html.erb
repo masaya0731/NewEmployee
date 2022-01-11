@@ -21,18 +21,16 @@
       <h4 class="text-body text-center">すべての投稿</h4><br>
     </div>
     <div class="kokuban-s00 offset-4 col-md-8 mt-3">
-      <div>
       <% @posts.each do |post| %>
-        <%= link_to public_customer_path(post) do %>
-        <%= attachment_image_tag post.customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "top-page-profile-image" %>
+        <%= link_to public_customer_path(post.customer) do %>
+        　<%= attachment_image_tag post.customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "top-page-profile-image" %>
           <span><%= post.customer.name %></span>
           <span>さんが投稿</span><br>
           <%= link_to public_post_path(post.id) do %>
-            <p class="top-page-post-title my-4 text-body h5"><%= post.title %></p><br>
+            <p class="my-4 text-body h5"><%= post.title %></p><br>
           <% end %>
         <% end %>
       <% end %>
-      </div>
     </div>
   </div>
 </div>

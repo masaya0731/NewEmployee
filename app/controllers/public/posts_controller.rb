@@ -23,8 +23,9 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @customer = Customer.find(@post.customer_id)
-    @post_comment = PostComment.new
+    @customer = @post.customer
+    @post_comments = @post.post_comments
+    @comment = PostComment.new
   end
 
   def edit
@@ -46,7 +47,7 @@ class Public::PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to public_customer_path(@post.id)
+    redirect_to public_customer_path(@post.customer)
     flash[:danger] = '投稿を削除しました'
   end
 
