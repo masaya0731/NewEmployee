@@ -139,6 +139,15 @@ header {
   border-radius: 50%;
 }
 
+// topページレスポンシブ
+@media screen and (max-width:768px) {
+
+  .top-post-all {
+    margin-top: 50px;
+  }
+
+}
+
 // ログインページ
 .kokuban-s3 {
   padding: 1em;

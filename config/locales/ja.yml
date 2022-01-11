@@ -10,10 +10,11 @@
         post:
           title: タイトル
           body: 投稿内容
+          category_id: カテゴリー
 
         post_comment:
           body: コメント内容
-          
+
         contact:
           name: お名前
           email: メールアドレス
