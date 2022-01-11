@@ -32,19 +32,19 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
 
-  #　お問い合わせ機能
+  # 　お問い合わせ機能
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = true
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      port: 587,
-      address: 'smtp.gmail.com',
-      domain: 'smtp.gmail.com',
-      user_name: ENV['SMTP_USERNAME'],
-      password: ENV['SMTP_PASSWORD'],
-      enable_starttls_auto: true
+    port: 587,
+    address: 'smtp.gmail.com',
+    domain: 'smtp.gmail.com',
+    user_name: ENV['SMTP_USERNAME'],
+    password: ENV['SMTP_PASSWORD'],
+    enable_starttls_auto: true
   }
 
   # Print deprecation notices to the Rails logger.

@@ -13,5 +13,4 @@ class Customer < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :introduction, length: { maximum: 100 }
-
 end

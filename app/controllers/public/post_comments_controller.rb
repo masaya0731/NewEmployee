@@ -1,5 +1,4 @@
 class Public::CommentsController < ApplicationController
-
   def create
     post = Post.find(params[:post_id])
     comment = current_customer.post_comments.new(post_comment_params)
@@ -8,13 +7,11 @@ class Public::CommentsController < ApplicationController
     redirect_to post_image_path(post)
   end
 
-  def destroy
-  end
+  def destroy; end
 
-   private
+  private
 
   def post_comment_params
     params.require(:post_comment).permit(:body, :comment_image)
   end
-
 end
