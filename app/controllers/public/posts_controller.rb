@@ -25,7 +25,7 @@ class Public::PostsController < ApplicationController
     @post.customer_id = current_customer.id
     tag_list = params[:post][:name].split(',')
     if @post.save
-       @post.save_tag(tag_list)
+      @post.save_tag(tag_list)
       redirect_to public_post_path(@post.id)
       flash[:success] = '投稿しました'
     else
@@ -51,7 +51,7 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     tag_list = params[:post][:name].split(',')
     if @post.update(post_params)
-       @post.save_tag(tag_list)
+      @post.save_tag(tag_list)
       redirect_to public_post_path(@post.id)
       flash[:success] = '投稿内容を変更しました'
     else
