@@ -12,7 +12,7 @@ class Public::PostsController < ApplicationController
     @category_searched = Category.find(params[:id])
     # カテゴリーが上のcategory_searchと一致する投稿を全て取得
     @all_posts_searched = Post.where(category_id: @category_searched.id)
-    # 最新10件の投稿を取得
+    # 取得した投稿の最新10件を表示
     @posts = @all_posts_searched.page(params[:page]).per(10).reverse_order
   end
 
