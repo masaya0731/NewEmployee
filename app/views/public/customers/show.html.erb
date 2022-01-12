@@ -13,7 +13,7 @@
       <% end %>
     </div>
     <div class="kokuban-s5 col-md-7 mt-5 offset-1">
-      <h3 class="text-white">投稿タイトル一覧</h3>
+      <span class="text-white h3">投稿タイトル一覧</span> (最新10件)<br>
       <% @posts.each do |post| %>
         <%= link_to public_post_path(post.id) do %>
           <div class="text-white mypage-post-title mt-3"><%= post.title %></div><br>

@@ -18,14 +18,14 @@
           <%= f.label :自己紹介（100文字以内）, class: "col-12" %>
           <%= f.text_area :introduction, autofocus: true %><br>
         </div>
-          <div class="field form-group row">
-            <%= f.label :メールアドレス, class: "col-12" %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %><br>
-          </div>
+        <div class="field form-group row">
+          <%= f.label :メールアドレス, class: "col-12" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %><br>
+        </div>
 
-          <div class="row">
-            <%= f.submit "編集内容を保存" %>
-          </div>
+        <div class="row">
+          <%= f.submit "編集内容を保存" %>
+        </div>
       <% end %>
     </div>
   </div>

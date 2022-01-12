@@ -1,6 +1,6 @@
 class Public::HomesController < ApplicationController
   def top
-    @posts = Post.all.order(id: 'DESC')
+    @posts = Post.all.limit(8).reverse_order
     @customers = Customer.all
     @categorys = Category.all
   end

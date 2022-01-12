@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :posts do
       resources :post_comments, only: %i[create destroy]
     end
+    get "/posts/category_search/:id", to: "posts#category_search",as: 'posts_category_search'
     resources :contacts, only: %i[new create]
     post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
     post 'contacts/back', to: 'contacts#back', as: 'back'
