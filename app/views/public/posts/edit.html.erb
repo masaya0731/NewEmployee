@@ -4,7 +4,7 @@
       <h3 class="col-12 text-white">投稿編集</h3>
       <%= form_with model:@post, url: public_post_path, local: true do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
-      
+
         <div class="row form-group ml-1">
           <%= f.label :カテゴリー, class: "offset-1 mr-5 mt-4" %>
           <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "選択して下さい" %>
@@ -13,6 +13,11 @@
         <div class="row form-group">
           <%= f.label :タイトル, class: "offset-1 col-11 mt-3" %>
           <%= f.text_field :title, class: "offset-1" %>
+        </div>
+
+        <div class="row form-group">
+          <%= f.label"タグ", class: "offset-1 col-11 mt-3" %>
+          <%= f.text_field :name, placeholder: ",で区切ると複数タグ登録できます", value: @tag_list, class: "offset-1" %>
         </div>
 
         <div class="row form-group">
