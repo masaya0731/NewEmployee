@@ -1,13 +1,15 @@
 class Public::CustomersController < ApplicationController
-  before_action :authenticate_customer!, except: [:show]
+  before_action :authenticate_customer!, except: %i[show post_all]
 
   def show
     @customer = Customer.find(params[:id])
     @posts = @customer.posts.limit(10).reverse_order
   end
 
-  def customer_post_all
-    @posts = @customer.posts.all
+  def post_all
+    # ユーザーの過去の投稿一覧
+    @customer = Customer.find(params[:id])
+    @posts = @customer.posts.all.page(params[:page]).per(20).reverse_order
   end
 
   def edit

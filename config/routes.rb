@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   namespace :public do
     resources :customers, only: %i[show edit update]
+    get '/customers/:id/post_all', to: 'customers#post_all', as: 'customers_post_all'
     resources :posts do
       resources :post_comments, only: %i[create destroy]
     end

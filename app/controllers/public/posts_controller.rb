@@ -2,7 +2,7 @@ class Public::PostsController < ApplicationController
   before_action :authenticate_customer!, except: %i[index show category_search]
 
   def index
-    @posts = Post.all.page(params[:page]).per(15).reverse_order
+    @posts = Post.all.page(params[:page]).per(10).reverse_order
     @categorys = Category.all
   end
 
@@ -12,8 +12,8 @@ class Public::PostsController < ApplicationController
     @category_searched = Category.find(params[:id])
     # カテゴリーが上のcategory_searchと一致する投稿を全て取得
     @all_posts_searched = Post.where(category_id: @category_searched.id)
-    # 直前で受け取った商品の中から、ページネーションのために、８個まで取得
-    @posts = @all_posts_searched.page(params[:page]).per(15).reverse_order
+    # 最新10件の投稿を取得
+    @posts = @all_posts_searched.page(params[:page]).per(10).reverse_order
   end
 
   def new

@@ -1,0 +1,17 @@
+<div class="container" style="margin-top: 50px;">
+  <div class="row">
+    <div class="kokuban-s12">
+      <div class="text-center h3">
+        <%= link_to public_customer_path(@customer) do%>
+          <%= @customer.name %>
+        <% end %>さんのすべての投稿
+      </div>
+      <% @posts.each do |post| %>
+        <%= link_to public_post_path(post.id) do %>
+          <p class="top-page-post-title my-4 h5 border-bottom"><%= post.title %></p><br>
+        <% end %>
+      <% end %>
+      <%= paginate @posts %>
+    </div>
+  </div>
+</div>
