@@ -4,7 +4,9 @@
     <div class="kokuban-s8 col-12">
       <h3 class="col-12 text-white">投稿詳細</h3>
       <div class="offset-1 mt-3 h4">
-        <%= @post.category.name %>
+        <%= link_to public_posts_category_search_path(@post.category.id) do %>
+          <span class="text-white"><%= @post.category.name %></span>
+        <% end %>
       </div>
       <%= link_to public_customer_path(@customer.id) do %>
         <%= attachment_image_tag @customer, :profile_image, size: "80x80", fallback: "no_image.jpg", class: "mt-3 customer_plofile_image offset-1" %><br>
