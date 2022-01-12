@@ -229,7 +229,7 @@ header {
   margin-top: 50px;
 }
 
-// ユーザーの投稿一覧画面
+// ユーザーの過去の投稿一覧画面
 
 .kokuban-s12 {
   width: 80%;
@@ -237,6 +237,10 @@ header {
   border-radius: 3px;
   background: white;
   margin: 0 auto;
+}
+
+.customer_profile_image {
+  border-radius: 50%;
 }
 
 // 新規投稿画面
