@@ -1,5 +1,5 @@
 class Public::PostsController < ApplicationController
-  before_action :authenticate_customer!, except: %i[index show category_search]
+  before_action :authenticate_customer!, except: %i[index show category_search tag_search]
 
   def index
     @posts = Post.all.page(params[:page]).per(10).reverse_order
