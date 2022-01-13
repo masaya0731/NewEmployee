@@ -3,7 +3,8 @@
   <div class="row mt-5">
     <div class="kokuban-s8 col-12">
       <h3 class="col-12 text-white">投稿詳細</h3>
-      <div class="offset-1 mt-3 h4">
+        <span class="offset-1">投稿日</span><%= @post.created_at.strftime('%Y/%m/%d') %><span class="offset-1">更新日</span><%= @post.updated_at.strftime('%Y/%m/%d') %><br>
+        <div class="offset-1 mt-3 h4">
         <%= link_to public_posts_category_search_path(@post.category.id) do %>
           <span class="text-white"><span class="text-white-link"><%= @post.category.name %></span></span>
         <% end %>

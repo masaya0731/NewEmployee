@@ -3,7 +3,7 @@ class Public::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
-    @posts = @customer.posts.limit(10).reverse_order
+    @posts = @customer.posts.limit(5).reverse_order
   end
 
   def post_all

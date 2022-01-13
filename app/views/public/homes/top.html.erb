@@ -24,9 +24,9 @@
       <% @posts.each do |post| %>
         <%= link_to public_customer_path(post.customer) do %>
         　<%= attachment_image_tag post.customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "top-page-profile-image" %>
-          <span><%= post.customer.name %></span>
-          <span>さんが投稿</span><br>
+          <span><%= post.customer.name %>さん</span>
         <% end %>
+        が<%= post.created_at.strftime('%Y/%m/%d') %>に投稿<br>
         <%= link_to public_post_path(post.id) do %>
           <p class="mt-3 h5 ml-3"><%= post.title %></p><br>
         <% end %>
