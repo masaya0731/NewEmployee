@@ -23,6 +23,7 @@ class Public::PostsController < ApplicationController
     @tag = Tag.find(params[:tag_id])
     # 検索されたタグに紐づく投稿を表示
     @posts = @tag.posts.page(params[:page]).per(10)
+    @categorys = Category.all
   end
 
   def new
@@ -79,6 +80,6 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :post_image, :category_id, :tag)
+    params.require(:post).permit(:title, :body, :post_image, :category_id)
   end
 end
