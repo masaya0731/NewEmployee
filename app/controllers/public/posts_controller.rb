@@ -16,6 +16,15 @@ class Public::PostsController < ApplicationController
     @posts = @all_posts_searched.page(params[:page]).per(10).reverse_order
   end
 
+  def tag_search
+    # 検索結果画面でもタグ一覧表示
+    @tag_list = Tag.all
+    # 検索されたタグを受け取る
+    @tag = Tag.find(params[:tag_id])
+    # 検索されたタグに紐づく投稿を表示
+    @posts = @tag.posts.page(params[:page]).per(10)
+  end
+
   def new
     @post = Post.new
   end
@@ -38,6 +47,7 @@ class Public::PostsController < ApplicationController
     @customer = @post.customer
     @post_comments = @post.post_comments
     @post_comment = PostComment.new
+    @post_tags = @post.tags
   end
 
   def edit
@@ -69,6 +79,6 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :post_image, :category_id)
+    params.require(:post).permit(:title, :body, :post_image, :category_id, :tag)
   end
 end

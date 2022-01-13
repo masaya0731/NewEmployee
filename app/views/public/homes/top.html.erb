@@ -30,7 +30,7 @@
         <%= link_to public_post_path(post.id) do %>
           <p class="mt-3 h5 ml-3"><%= post.title %></p><br>
         <% end %>
-        <div class="border-bottom fas fa-tag tag-name pb-1"><%= post.tags.map(&:name).join(', ') %></div><br>
+        <div class="border-bottom fas fa-tag tag-name pb-1"><%= link_to root_path do %><%= post.tags.map(&:name).join(',') %></div><% end %><br>
       <% end %>
       <%= link_to "すべての投稿を見る", public_posts_path, class: "btn btn-success text-white" %>
     </div>

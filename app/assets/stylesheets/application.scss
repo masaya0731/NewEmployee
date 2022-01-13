@@ -47,14 +47,16 @@ a:hover {
   display: block;
 }
 
-// エラーメッセージ
+.fa-tag:before {
+  margin-right: 10px;
+}
 
+// エラーメッセージ
 .error-message {
   display: inline-block;
 }
 
 // ヘッダー
-
 header {
   width: 96%;
   margin: 0 auto;
@@ -99,7 +101,6 @@ header {
 }
 
 // topページ
-
 #container {
   height: 600px;
   width: 100%;
@@ -167,7 +168,6 @@ header {
 }
 
 // aboutページ
-
 .about-heading {
   border-bottom: 3px solid #fff;
   display: inline-block;
@@ -184,7 +184,6 @@ header {
 }
 
 // マイページ
-
 .customer_plofile_image {
   border-radius: 50%;
 }
@@ -203,7 +202,6 @@ header {
 }
 
 // ユーザー編集画面
-
 .kokuban-s6 {
   padding: 1em;
   background: #006633;
@@ -216,7 +214,6 @@ header {
 }
 
 //　投稿一覧画面
-
 .kokuban-s10 {
   width: 100%;
   padding: 1em;
@@ -225,8 +222,7 @@ header {
   margin-top: 50px;
 }
 
-// カテゴリー一覧画面
-
+// カテゴリー検索一覧画面
 .kokuban-s11 {
   padding: 1em;
   border-radius: 3px;
@@ -234,8 +230,10 @@ header {
   margin-top: 50px;
 }
 
-// ユーザーの過去の投稿一覧画面
+// タグ検索一覧画面
 
+
+// ユーザーの過去の投稿一覧画面
 .kokuban-s12 {
   width: 80%;
   padding: 1em;
@@ -249,7 +247,6 @@ header {
 }
 
 // 新規投稿画面
-
 .kokuban-s7 {
   width: 80%;
   padding: 1em;
@@ -262,7 +259,6 @@ header {
 }
 
 //　投稿詳細画面
-
 .kokuban-s8 {
   width: 80%;
   padding: 1em;
@@ -279,7 +275,6 @@ header {
 }
 
 //　投稿編集画面
-
 .kokuban-s9 {
   width: 80%;
   padding: 1em;
@@ -298,7 +293,6 @@ header {
 }
 
 // フッター
-
 footer {
   width: 100%;
   height: 150px;

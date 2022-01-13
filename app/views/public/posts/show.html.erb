@@ -16,7 +16,8 @@
       <% end %>
       <h4 class="text-white offset-1 col-11 mt-3">タイトル</h4>
       <div class="mt-3 offset-1 col-11 h5"><%= @post.title %></div>
-      <div class="fas fa-tag offset-1 mt-3"><%= @post.tags.map(&:name).join(', ') %></div><br>
+      <div class="fas fa-tag offset-1 mt-3"><% @post_tags.each do |tag| %>
+      <%= link_to tag.name, public_tag_search_path(tag_id: tag.id) %><%="," %><% end %></div><br>
       <h4 class="text-white offset-1 col-11 mt-3">投稿内容</h4>
       <div class="mt-3 offset-1 col-11 h5"><%= @post.body %></div>
       <% if @post.customer == current_customer %>
