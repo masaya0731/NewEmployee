@@ -1,5 +1,5 @@
 class Public::PostsController < ApplicationController
-  before_action :authenticate_customer!, except: %i[index show category_search tag_search]
+  before_action :authenticate_customer!, except: %i[index show category_search tag_search word_search]
 
   def index
     @posts = Post.all.page(params[:page]).per(10).reverse_order
@@ -17,13 +17,26 @@ class Public::PostsController < ApplicationController
   end
 
   def tag_search
-    # 検索結果画面でもタグ一覧表示
     @tag_list = Tag.all
     # 検索されたタグを受け取る
     @tag = Tag.find(params[:tag_id])
-    # 検索されたタグに紐づく投稿を表示
+    # クリックされたタグに紐づく投稿を表示
     @posts = @tag.posts.page(params[:page]).per(10)
     @categorys = Category.all
+  end
+
+  def word_search
+    @categorys = Category.all
+    # 検索された文字を受け取る
+    @keywords = params[:keyword]
+    @posts = Post.includes(:customer, :post_comments).page(params[:page]).per(10).reverse_order
+    split_keywords = @keywords.split(/[[:blank:]]+/)
+    split_keywords.each do |word|
+      @posts = @posts.eager_load([:category, tag_maps: :tag]).where([
+        'posts.title LIKE ? OR posts.body LIKE ? OR categories.name LIKE ? OR tags.name LIKE ?',
+        "%#{word}%", "%#{word}%", "%#{word}%", "%#{word}%",
+      ])
+    end
   end
 
   def new

@@ -55,6 +55,10 @@ a:hover {
   color: #5D99FF;
 }
 
+.word-search {
+  width: 350px;
+}
+
 // エラーメッセージ
 .error-message {
   display: inline-block;
@@ -150,6 +154,11 @@ header {
   border-radius: 50%;
 }
 
+.top-post-title {
+  width: 100%;
+  display: inline-block;
+}
+
 // topページレスポンシブ
 @media screen and (max-width:768px) {
 
@@ -199,6 +208,10 @@ header {
   border: 8px solid #b2771f;
   border-radius: 3px;
   box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+}
+
+.mypage-post-title {
+  display: inline-block;
 }
 
 // ユーザー編集画面
