@@ -33,9 +33,9 @@ class Public::PostsController < ApplicationController
     split_keywords = @keywords.split(/[[:blank:]]+/)
     split_keywords.each do |word|
       @posts = @posts.eager_load([:category, { tag_maps: :tag }]).where([
-                                                                          'posts.title LIKE ? OR posts.body LIKE ? OR categories.name LIKE ? OR tags.name LIKE ?',
-                                                                          "%#{word}%", "%#{word}%", "%#{word}%", "%#{word}%"
-                                                                        ])
+        'posts.title LIKE ? OR posts.body LIKE ? OR categories.name LIKE ? OR tags.name LIKE ?',
+        "%#{word}%", "%#{word}%", "%#{word}%", "%#{word}%"
+      ])
     end
   end
 
