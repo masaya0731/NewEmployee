@@ -30,7 +30,16 @@
       <% end %>
     </div>
     <div class="kokuban-s8 col-12 mt-5">
-      <h3 class="col-12 text-white">コメント</h3>
+      <h3 class="col-12 text-white">コメントする</h3>
+      <% @post.post_comments.each do |post_comment| %>
+        <%= attachment_image_tag @customer, :profile_image, size: "80x80", fallback: "no_image.jpg", class: "mt-3 customer_plofile_image offset-1" %><br>
+        <%= post_comment.customer.name %>
+        <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
+      <% end %>
+      <%= form_with(model:[@post, @post_comment], url: public_posts_path, local: true) do |f| %>
+        <%= f.text_area :body, size: "6x6", placeholder: "コメントをここに", class: "mt-3 offset-1 col-10" %><br>
+        <%= f.submit "送信する", class: "mt-3 offset-1" %>
+      <% end %>
     </div>
   </div>
 </div>
