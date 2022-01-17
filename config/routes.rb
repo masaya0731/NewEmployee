@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     get '/word_search', to: 'posts#word_search'
     get '/tag_search', to: 'posts#tag_search'
     get '/posts/category_search/:id', to: 'posts#category_search', as: 'posts_category_search'
+    resources :notifications, only: :index
+    delete '/notifications', to: 'notifications#destroy_all', as: 'notifications_destroy_all'
     resources :contacts, only: %i[new create]
     post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
     post 'contacts/back', to: 'contacts#back', as: 'back'

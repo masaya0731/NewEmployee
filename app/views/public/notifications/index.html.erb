@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="kokuban-s10 mx-auto">
+      <h4 class="text-body text-center">通知</h4>
+      <%= link_to public_notifications_destroy_all_path, method: :delete, data: { confirm: '通知をすべて削除します' } do %>
+        <i class="fas fa-trash" style="color: black;"></i>
+        <h7 style="color: black;">全削除</h7>
+      <% end %>
+        <hr>
+      <% if @notifications.exists? %>
+        <div class="users-index">
+        <%= render @notifications %>
+        </div>
+      <% else %>
+        <p>通知はありません</p>
+      <% end %>
+    </div>
+  </div>
+</div>
