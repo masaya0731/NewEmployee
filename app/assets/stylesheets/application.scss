@@ -307,6 +307,21 @@ header {
   margin: 0 auto;
 }
 
+//　コメント編集画面
+.kokuban-s14 {
+  padding: 1em;
+  background: #006633;
+  color: #fff;
+  border: 8px solid #b2771f;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+  margin: 0 auto;
+}
+
+.comment-edit-text {
+  font-size: 20px;
+}
+
 //　お問い合わせ
 .contact-form {
   width: 80%;

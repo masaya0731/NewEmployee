@@ -1,4 +1,16 @@
 class Public::PostCommentsController < ApplicationController
+
+  def edit
+    @post_comment = PostComment.find(params[:id])
+  end
+
+  def update
+    @post_comment = PostComment.find(params[:id])
+    if @post_comment.update(post_comment_params)
+      redirect_to public_post_path
+    end
+  end
+
   def create
     @post = Post.find(params[:post_id])
     @comment = current_customer.post_comments.new(post_comment_params)
@@ -7,8 +19,6 @@ class Public::PostCommentsController < ApplicationController
        @post.create_notification_post_comment!(current_customer, @comment.id)
       redirect_to public_post_path(@post)
       flash[:success] = "コメントしました"
-    else
-      render public_post_path(@post)
     end
   end
 

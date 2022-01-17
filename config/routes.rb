@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :customers, only: %i[show edit update]
     get '/customers/:id/post_all', to: 'customers#post_all', as: 'customers_post_all'
     resources :posts do
-      resources :post_comments, only: %i[create destroy]
+      resources :post_comments, only: %i[edit update create destroy]
     end
     get '/word_search', to: 'posts#word_search'
     get '/tag_search', to: 'posts#tag_search'

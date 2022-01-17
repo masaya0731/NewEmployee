@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="kokuban-s4 col-12">
+      <h3 class="col-12 text-white">コメント編集</h3>
+      <%= form_with model:@post_comment, url: public_post_post_comment_path(@post_comment.id), local: true do |f| %>
+
+        <div class="row form-group">
+          <%= f.label :コメント内容編集, class: "offset-1 col-11 mt-3 comment-edit-text"%>
+          <%= f.text_area :body, size: "5x5", class: "offset-1 mt-3" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "投稿内容を変更する", class: 'offset-1' %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
