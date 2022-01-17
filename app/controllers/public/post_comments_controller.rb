@@ -7,7 +7,7 @@ class Public::PostCommentsController < ApplicationController
   def update
     @post_comment = PostComment.find(params[:id])
     if @post_comment.update(post_comment_params)
-      redirect_to public_post_path
+      redirect_to public_post_path()
     end
   end
 
