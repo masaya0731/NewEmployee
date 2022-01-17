@@ -6,13 +6,15 @@ class Public::PostCommentsController < ApplicationController
     if @comment.save
       redirect_to public_post_path(@post)
       flash[:success] = "コメントしました"
+    else
+      render public_post_path(@post)
     end
   end
 
   def destroy
     if PostComment.find_by(id: params[:id]).destroy
       redirect_to public_post_path(params[:post_id])
-      flash[:danger] = '投稿を削除しました'
+      flash[:danger] = 'コメントを削除しました'
     end
   end
 

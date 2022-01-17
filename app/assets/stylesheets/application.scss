@@ -56,7 +56,7 @@ a:hover {
 }
 
 .word-search {
-  width: 350px;
+  width: 320px;
 }
 
 // エラーメッセージ
@@ -129,9 +129,6 @@ header {
 }
 .top-image4 {
   background-image: url(top-image4.jpg);
-}
-.top-image5 {
-  background-image: url(top-image5.jpg);
 }
 
 .kokuban-s0 {
@@ -212,6 +209,10 @@ header {
 
 .mypage-post-title {
   display: inline-block;
+}
+
+.post-all-count {
+  font-size: 20px;
 }
 
 // ユーザー編集画面
