@@ -20,9 +20,6 @@
         <% end %>
       <% end %>
       <%= link_to "過去の投稿をすべて見る", public_customers_post_all_path, class: "mt-3 text-success btn btn-light font-weight-bold" %>
-      <% if @customer == current_customer %>
-        <%= link_to "コメント通知を見る", public_notifications_path, class: "btn btn-light text-success font-weight-bold mt-3 ml-3" %>
-      <% end %>
     </div>
   </div>
 </div>

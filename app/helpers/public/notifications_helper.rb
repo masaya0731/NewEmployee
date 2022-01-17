@@ -11,4 +11,9 @@ module Public::NotificationsHelper
         tag.a(@visitor.name, href:public_customer_path(@visitor), style:"font-weight: bold;")+"さんが"+tag.a('あなたの投稿', href:public_post_path(notification.post_id), style:"font-weight: bold;")+"にコメントしました"
     end
   end
+
+  def unchecked_notifications
+     # 通知の確認
+    @notifications = current_customer.passive_notifications.where(checked: false)
+  end
 end
