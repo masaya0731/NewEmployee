@@ -18,7 +18,11 @@ class Public::PostsController < ApplicationController
     # カテゴリーが上のcategory_searchと一致する投稿を全て取得
     @all_posts_searched = Post.where(category_id: @category_searched.id)
     # 取得した投稿の最新10件を表示
-    @posts = @all_posts_searched.page(params[:page]).per(10).reverse_order
+    if params[:sort_create]
+      @posts = @all_posts_searched.page(params[:page]).per(10)
+    else
+      @posts = @all_posts_searched.page(params[:page]).per(10).reverse_order
+    end
   end
 
   def tag_search
@@ -26,7 +30,11 @@ class Public::PostsController < ApplicationController
     # 検索されたタグを受け取る
     @tag = Tag.find(params[:tag_id])
     # クリックされたタグに紐づく投稿を表示
-    @posts = @tag.posts.page(params[:page]).per(10).reverse_order
+    if params[:sort_create]
+      @posts = @tag.posts.page(params[:page]).per(10)
+    else
+      @posts = @tag.posts.page(params[:page]).per(10).reverse_order
+    end
     @categorys = Category.all
   end
 
