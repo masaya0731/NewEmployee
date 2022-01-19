@@ -1,16 +1,20 @@
-<% @posts.each do |post| %>
-  <%= link_to public_customer_path(post.customer) do %>
-    <%= attachment_image_tag post.customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "top-page-profile-image" %>
-    <span><%= post.customer.name %>さん</span>
-  <% end %>
-  が<%= post.created_at.strftime('%Y/%m/%d') %>に投稿<br>
-  <%= link_to public_post_path(post.id) do %>
-    <p class="top-page-post-title mt-3 h5"><%= post.title %></p><br>
-  <% end %>
-  <div class="fas fa-tag border-bottom tag-name">
-    <% post.tags.each do |tag| %>
-      <%= link_to tag.name, public_tag_search_path(tag_id: tag.id) %><%="," %>
+<% if @posts.empty? %>
+  <p>まだ投稿はありません</p>
+<% else %>
+  <% @posts.each do |post| %>
+    <%= link_to public_customer_path(post.customer) do %>
+      <%= attachment_image_tag post.customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "top-page-profile-image" %>
+      <span><%= post.customer.name %>さん</span>
     <% end %>
-  </div><br>
+    が<%= post.created_at.strftime('%Y/%m/%d') %>に投稿<br>
+    <%= link_to public_post_path(post.id) do %>
+      <p class="top-page-post-title mt-3 h5"><%= post.title %></p><br>
+    <% end %>
+    <div class="fas fa-tag border-bottom tag-name">
+      <% post.tags.each do |tag| %>
+        <%= link_to tag.name, public_tag_search_path(tag_id: tag.id) %><%="," %>
+      <% end %>
+    </div><br>
+  <% end %>
+  <%= paginate @posts %>
 <% end %>
-<%= paginate @posts %>

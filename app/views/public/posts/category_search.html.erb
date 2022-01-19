@@ -3,9 +3,7 @@
     <%= render 'public/categories/index', categorys: @categorys %>
     <div class = "kokuban-s11 offset-1 col-md-8">
       <h4 class="text-center text-body border-bottom"><%= @category_searched.name %>の投稿一覧</h4>
-      <% if !(@posts.blank?) %>
-      <%= render 'public/posts/index', post: @posts %>
-      <% end %>
+        <%= render 'public/posts/index', post: @posts %>
     </div>
   </div>
 </div>
