@@ -3,6 +3,10 @@
    <%= render 'public/categories/index', categorys: @categorys %>
     <div class="kokuban-s10 offset-1 col-md-8">
       <h4 class="text-body text-center border-bottom">すべての投稿</h4>
+      <div class="mb-3">
+        <%= link_to "新しい順", public_posts_path %>
+        <span class="mx-2">|</span><%= link_to "古い順", public_posts_path(sort_create: "true") %><br>
+      </div>
       <%= render 'public/posts/index', post: @posts %>
     </div>
   </div>

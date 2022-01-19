@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row mt-5">
+    <div class="text-success mt-1"><strong><%= flash[:success] %></strong></div>
     <div class="kokuban-s4 col-12">
       <h3 class="col-12 text-white">コメント編集</h3>
       <%= form_with model:@post_comment, url: public_post_post_comment_path(@post_comment), local: true do |f| %>

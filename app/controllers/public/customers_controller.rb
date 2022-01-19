@@ -9,7 +9,11 @@ class Public::CustomersController < ApplicationController
   def post_all
     # ユーザーの過去の投稿一覧
     @customer = Customer.find(params[:id])
-    @posts = @customer.posts.all.page(params[:page]).per(20).reverse_order
+    if params[:sort_create]
+      @posts = @customer.posts.all.page(params[:page]).per(20)
+    else
+      @posts = @customer.posts.all.page(params[:page]).per(20).reverse_order
+    end
   end
 
   def edit

@@ -8,6 +8,10 @@
         <% end %>
         <span>さんのすべての投稿<span class="post-all-count ml-3">(<%= @posts.count %>件)</span></span>
       </div>
+      <div class="mb-3">
+        <%= link_to "新しい順", public_customers_post_all_path %>
+        <span class="mx-2">|</span><%= link_to "古い順", public_customers_post_all_path(sort_create: "true") %><br>
+      </div>
       <% @posts.each do |post| %>
         <span>投稿日</span><%= post.created_at.strftime('%Y/%m/%d') %>
         <%= link_to public_post_path(post.id) do %>
