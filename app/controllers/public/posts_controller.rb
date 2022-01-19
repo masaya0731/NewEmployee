@@ -2,6 +2,7 @@ class Public::PostsController < ApplicationController
   before_action :authenticate_customer!, except: %i[index show category_search tag_search word_search]
 
   def index
+    # ソート機能（新しい順、古い順）
     if params[:sort_create]
       @posts = Post.all.page(params[:page]).per(10)
     else
@@ -25,7 +26,7 @@ class Public::PostsController < ApplicationController
     # 検索されたタグを受け取る
     @tag = Tag.find(params[:tag_id])
     # クリックされたタグに紐づく投稿を表示
-    @posts = @tag.posts.page(params[:page]).per(10)
+    @posts = @tag.posts.page(params[:page]).per(10).reverse_order
     @categorys = Category.all
   end
 

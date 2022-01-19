@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="page-top">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light mt-4">
         <div class="container">
@@ -40,7 +40,6 @@
                 <li><%= link_to '投稿する', new_public_post_path, class:"nav-link text-white" %></li>
                 <li><%= link_to '投稿一覧', public_posts_path, class:"nav-link text-white" %></li>
                 <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:"nav-link text-white" %></li>
-                <li><%= link_to "お問い合わせ", new_public_contact_path, class:"nav-link text-white" %></li>
               <% else %>
                 <li><%= link_to 'About', about_path, class:"nav-link text-white" %></li>
                 <li><%= link_to '投稿一覧', public_posts_path, class:"nav-link text-white" %></li>
@@ -53,7 +52,17 @@
       </nav>
     </header>
     <%= yield %>
-    <footer>
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-logo col-12"><%= link_to "NewEmployee", root_path, class: "text-white" %></div><br>
+          <div class="footer-nav mt-3">
+            <%= link_to "About", about_path, class: "text-white" %>
+            <%= link_to "お問い合わせ", new_public_contact_path, class:"text-white mx-3" %>
+            <a href="#page-top" class="text-white">ページトップへ</a>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
