@@ -10,11 +10,11 @@ class Public::CustomersController < ApplicationController
     # ユーザーの過去の投稿一覧
     @customer = Customer.find(params[:id])
     # ソート機能（新しい順）、古い順
-    if params[:sort_create]
-      @posts = @customer.posts.all.page(params[:page]).per(20)
-    else
-      @posts = @customer.posts.all.page(params[:page]).per(20).reverse_order
-    end
+    @posts = if params[:sort_create]
+               @customer.posts.all.page(params[:page]).per(20)
+             else
+               @customer.posts.all.page(params[:page]).per(20).reverse_order
+             end
   end
 
   def edit
