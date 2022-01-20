@@ -3,11 +3,11 @@ class Public::PostsController < ApplicationController
 
   def index
     # ソート機能（新しい順、古い順）
-    if params[:sort_create]
-      @posts = Post.all.page(params[:page]).per(10)
-    else
-      @posts = Post.all.page(params[:page]).per(10).reverse_order
-    end
+    @posts = if params[:sort_create]
+               Post.all.page(params[:page]).per(10)
+             else
+               Post.all.page(params[:page]).per(10).reverse_order
+             end
     @categorys = Category.all
   end
 
@@ -18,11 +18,11 @@ class Public::PostsController < ApplicationController
     # カテゴリーが上のcategory_searchと一致する投稿を全て取得
     @all_posts_searched = Post.where(category_id: @category_searched.id)
     # 取得した投稿の最新10件を表示
-    if params[:sort_create]
-      @posts = @all_posts_searched.page(params[:page]).per(10)
-    else
-      @posts = @all_posts_searched.page(params[:page]).per(10).reverse_order
-    end
+    @posts = if params[:sort_create]
+               @all_posts_searched.page(params[:page]).per(10)
+             else
+               @all_posts_searched.page(params[:page]).per(10).reverse_order
+             end
   end
 
   def tag_search
@@ -42,9 +42,9 @@ class Public::PostsController < ApplicationController
     split_keywords = @keywords.split(/[[:blank:]]+/)
     split_keywords.each do |word|
       @posts = @posts.eager_load([:category, { tag_maps: :tag }]).where([
-        'posts.title LIKE ? OR posts.body LIKE ? OR categories.name LIKE ? OR tags.name LIKE ?',
-        "%#{word}%", "%#{word}%", "%#{word}%", "%#{word}%"
-      ])
+                                                                          'posts.title LIKE ? OR posts.body LIKE ? OR categories.name LIKE ? OR tags.name LIKE ?',
+                                                                          "%#{word}%", "%#{word}%", "%#{word}%", "%#{word}%"
+                                                                        ])
     end
   end
 

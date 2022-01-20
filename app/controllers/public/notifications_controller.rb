@@ -1,5 +1,4 @@
 class Public::NotificationsController < ApplicationController
-
   def index
     @notifications = current_customer.passive_notifications.page(params[:page]).per(10)
     @notifications.where(checked: false).each do |notification|
@@ -8,9 +7,8 @@ class Public::NotificationsController < ApplicationController
   end
 
   def destroy_all
-    #通知を全削除
+    # 通知を全削除
     @notifications = current_customer.passive_notifications.destroy_all
     redirect_to public_notifications_path
   end
-
 end

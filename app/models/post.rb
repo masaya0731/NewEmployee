@@ -32,8 +32,8 @@ class Post < ApplicationRecord
       tags << new_post_tag
     end
   end
-  
-    # コメント通知メソッド
+
+  # コメント通知メソッド
   def create_notification_post_comment!(current_customer, post_comment_id)
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
     temp_ids = PostComment.select(:customer_id).where(post_id: id).where.not(customer_id: current_customer.id).distinct
@@ -53,9 +53,7 @@ class Post < ApplicationRecord
       action: 'post_comment'
     )
     # 自分の投稿に対するコメントの場合は、通知済みとする
-    if notification.visitor_id == notification.visited_id
-      notification.checked = true
-    end
+    notification.checked = true if notification.visitor_id == notification.visited_id
     notification.save if notification.valid?
   end
 end
