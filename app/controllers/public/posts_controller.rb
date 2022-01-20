@@ -30,11 +30,7 @@ class Public::PostsController < ApplicationController
     # 検索されたタグを受け取る
     @tag = Tag.find(params[:tag_id])
     # クリックされたタグに紐づく投稿を表示
-    if params[:sort_create]
-      @posts = @tag.posts.page(params[:page]).per(10)
-    else
-      @posts = @tag.posts.page(params[:page]).per(10).reverse_order
-    end
+    @posts = @tag.posts.page(params[:page]).per(10).reverse_order
     @categorys = Category.all
   end
 
