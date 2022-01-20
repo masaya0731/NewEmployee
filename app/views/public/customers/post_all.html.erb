@@ -12,18 +12,22 @@
         <%= link_to "新しい順", public_customers_post_all_path %>
         <span class="mx-2">|</span><%= link_to "古い順", public_customers_post_all_path(sort_create: "true") %><br>
       </div>
-      <% @posts.each do |post| %>
-        <span>投稿日</span><%= post.created_at.strftime('%Y/%m/%d') %>
-        <%= link_to public_post_path(post.id) do %>
-          <p class="mt-3 h5"><%= post.title %></p><br>
-        <% end %>
-        <div class="fas fa-tag border-bottom tag-name">
-          <% post.tags.each do |tag| %>
-            <%= link_to tag.name, public_tag_search_path(tag_id: tag.id) %><%="," %>
+      <% if @posts.empty? %>
+        <p>まだ投稿はありません</p>
+      <% else %>
+        <% @posts.each do |post| %>
+          <span>投稿日</span><%= post.created_at.strftime('%Y/%m/%d') %>
+          <%= link_to public_post_path(post.id) do %>
+            <p class="mt-3 h5"><%= post.title %></p><br>
           <% end %>
-        </div><br>
+          <div class="fas fa-tag border-bottom tag-name">
+            <% post.tags.each do |tag| %>
+              <%= link_to tag.name, public_tag_search_path(tag_id: tag.id) %><%="," %>
+            <% end %>
+          </div><br>
+        <% end %>
+        <%= paginate @posts %>
       <% end %>
-      <%= paginate @posts %>
     </div>
   </div>
 </div>
