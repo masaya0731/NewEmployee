@@ -4,6 +4,7 @@
     <div class="kokuban-s3 col-12">
       <h3 class="col-12 text-white">コメント編集</h3>
       <%= form_with model:@post_comment, url: public_post_post_comment_path(@post_comment), local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
 
         <div class="row form-group">
           <%= f.label :コメント内容編集, class: "offset-1 col-11 mt-3 comment-edit-text"%>

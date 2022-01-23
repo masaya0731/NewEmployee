@@ -20,6 +20,11 @@
           <%= f.text_field :name, placeholder: ",で区切ると複数タグ登録できます", value: @tag_list, class: "offset-1" %>
         </div>
 
+        <div class="field row form-group mt-3">
+          <%= f.label :画像, class: "offset-1 col-11" %>
+          <%= f.attachment_field :post_image, class: "offset-1" %><br>
+        </div>
+
         <div class="row form-group">
           <%= f.label :投稿内容, class: "offset-1 col-11 mt-3"%>
           <%= f.text_area :body, size: "1x9", class: "offset-1" %>

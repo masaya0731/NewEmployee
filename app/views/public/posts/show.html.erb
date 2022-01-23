@@ -24,6 +24,8 @@
           <%= link_to tag.name, public_tag_search_path(tag_id: tag.id), class: "text-white text-white-link" %><%="," %>
         <% end %>
       </div><br>
+      <h4 class="text-white offset-1 col-11 mt-3">画像</h4>
+      <div class="offset-1"><%= attachment_image_tag @post, :post_image, size: "200x200", format: 'jpeg' %></div>
       <h4 class="text-white offset-1 col-11 mt-3">投稿内容</h4>
       <div class="mt-3 offset-1 col-11 h5"><%= @post.body %></div>
       <% if @post.customer == current_customer %>
