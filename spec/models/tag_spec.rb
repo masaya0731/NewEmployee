@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Tagモデルのテスト', type: :model do
-
   describe 'アソシエーションのテスト' do
     context 'TagMapモデル' do
       it '1:Nとなっている' do

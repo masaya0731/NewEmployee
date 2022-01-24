@@ -22,12 +22,10 @@ RSpec.describe 'Postモデルのテスト', type: :model do
         is_expected.to eq false
       end
     end
-
   end
 
   describe 'アソシエーションのテスト' do
-
-     context 'PostCommentモデル' do
+    context 'PostCommentモデル' do
       it '1:Nとなっている' do
         expect(Post.reflect_on_association(:post_comments).macro).to eq :has_many
       end
@@ -62,6 +60,5 @@ RSpec.describe 'Postモデルのテスト', type: :model do
         expect(Post.reflect_on_association(:category).macro).to eq :belongs_to
       end
     end
-
   end
 end
