@@ -51,7 +51,18 @@
         </div>
       </nav>
     </header>
+    <p class="pagetop" style="display: block;">
+      <a href="#page-top">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+    </p>
+    <p class="pagebottom" style="display: block;">
+      <a href="#page-bottom">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </p>
     <%= yield %>
+    <div id ="page-bottom"></div>
     <footer id="footer">
       <div class="container">
         <div class="row">
@@ -59,7 +70,6 @@
           <div class="footer-nav mt-3">
             <%= link_to "About", about_path, class: "text-white" %>
             <%= link_to "お問い合わせ", new_public_contact_path, class:"text-white mx-3" %>
-            <a href="#page-top" class="text-white">ページトップへ</a>
           </div>
         </div>
       </div>
