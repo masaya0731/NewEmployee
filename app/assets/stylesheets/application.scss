@@ -224,6 +224,7 @@ header {
 @media screen and (max-width:768px) {
 
   .top-post-all {
+    margin: 0 auto;
     margin-top: 50px;
   }
 
@@ -396,6 +397,15 @@ header {
   font-size: 20px;
 }
 
+@media screen and (max-width:768px) {
+
+  .kokuban-s5 {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+}
+
 // ユーザー編集画面
 .kokuban-s6 {
   padding: 1em;
@@ -415,6 +425,15 @@ header {
   border-radius: 3px;
   background: white;
   margin-top: 50px;
+}
+
+@media screen and (max-width:768px) {
+
+  .kokuban-s10 {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
 }
 
 // カテゴリー検索一覧画面
