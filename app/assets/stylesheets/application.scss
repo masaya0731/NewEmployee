@@ -228,6 +228,16 @@ header {
     margin-top: 50px;
   }
 
+  .kokuban-s0 {
+    order: 2;
+    margin-top: 50px;
+  }
+
+  .kokuban-s00 {
+    order: 1;
+    margin-top: 550px;
+  }
+
 }
 
 // ログインページ
@@ -427,10 +437,24 @@ header {
   margin-top: 50px;
 }
 
+.kokuban-s11 {
+  width: 100%;
+  padding: 1em;
+  border-radius: 3px;
+  background: white;
+  margin-top: 50px;
+}
+
 @media screen and (max-width:768px) {
 
-  .kokuban-s10 {
+  .kokuban-s11 {
     margin: 0 auto;
+    margin-top: 550px;
+    order: 1;
+  }
+
+  .kokuban-s10 {
+    order: 2;
     margin-top: 50px;
   }
 
