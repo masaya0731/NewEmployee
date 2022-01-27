@@ -1,7 +1,7 @@
 class Public::PostCommentsController < ApplicationController
   def edit
     @post_comment = PostComment.find(params[:id])
-    # ログインユーザーと検索したユーザーのIDが一致しなければマイページに遷移させる、ログインしていなければログイン画面に遷移
+    # ログインユーザーと検索したユーザーのIDが一致しなければマイページに遷移させる、ログインしていなければログイン画面に遷移させる
     if customer_signed_in?
       redirect_to public_customer_path(current_customer) unless @post_comment.customer == current_customer
     else
