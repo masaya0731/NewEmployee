@@ -32,7 +32,7 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
 
-  # 　お問い合わせ機能
+  # お問い合わせ機能
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = true
