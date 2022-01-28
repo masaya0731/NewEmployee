@@ -25,8 +25,8 @@ Rails.application.routes.draw do
     resources :notifications, only: :index
     delete '/notifications', to: 'notifications#destroy_all', as: 'notifications_destroy_all'
     resources :contacts, only: %i[new create]
-    post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
-    post 'contacts/back', to: 'contacts#back', as: 'back'
-    get 'contacts/complete', to: 'contacts#complete', as: 'complete'
+    post '/contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+    post '/contacts/back', to: 'contacts#back', as: 'back'
+    get '/contacts/complete', to: 'contacts#complete', as: 'complete'
   end
 end
