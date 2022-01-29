@@ -2,6 +2,7 @@ class Public::PostsController < ApplicationController
   before_action :authenticate_customer!, except: %i[index show category_search tag_search word_search]
 
   def index
+    @post_all = Post.all
     # ソート機能（新しい順、古い順）
     @posts = if params[:sort_create]
                Post.all.page(params[:page]).per(10)
@@ -12,6 +13,7 @@ class Public::PostsController < ApplicationController
   end
 
   def category_search
+    @post_all = Post.all
     @categorys = Category.all
     # 受け取ったカテゴリーIDと同じカテゴリーをリストから探し取得
     @category_searched = Category.find(params[:id])
@@ -26,6 +28,7 @@ class Public::PostsController < ApplicationController
   end
 
   def tag_search
+    @post_all = Post.all
     @tag_list = Tag.all
     # 検索されたタグを受け取る
     @tag = Tag.find(params[:tag_id])
@@ -35,6 +38,7 @@ class Public::PostsController < ApplicationController
   end
 
   def word_search
+    @post_all = Post.all
     @categorys = Category.all
     # 検索された文字を受け取る
     @keywords = params[:keyword]
