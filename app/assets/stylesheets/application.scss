@@ -60,6 +60,23 @@ a:hover {
   width: 320px;
 }
 
+//新規投稿ボタン
+.new-post-btn {
+  display: none;
+    position: fixed;
+    left: 30px;
+    bottom: 70px;
+    z-index: 999;
+}
+
+.new-post-btn span {
+  line-height: 50px;
+  font-size: 40px;
+  background-color: #28a745;
+  border-radius: 50%;
+  padding: 8px 8px;
+}
+
 //ページ上下移動ボタン
 .pagetop{
     display: none;
