@@ -15,15 +15,8 @@
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
 
-        <% if devise_mapping.rememberable? %>
-          <div class="field row form-group">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-        <% end %>
-
         <div class="row">
-          <%= f.submit "ログイン", class: "text-white" %>
+          <%= f.submit "ログイン", class: "text-white mt-4" %>
         </div>
       </div>
     <% end %>
