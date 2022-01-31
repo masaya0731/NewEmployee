@@ -40,7 +40,7 @@
 <https://docs.google.com/spreadsheets/d/1gjALBKxuyKU_9TFOMElKp1exEErPHncNeUVInMY7djs/edit?usp=sharing>
 
 ## サンプルユーザー
-- 新規登録をせずログインで使用できます。
+新規登録をせずログインで使用できます。
 - メールアドレス: a@a
 - パスワード: password
 

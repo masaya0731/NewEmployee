@@ -1,13 +1,13 @@
 <div class="container contact-form contact-confirm">
   <div class="row mt-5">
     <h5 class="col-12 text-body mt-3">お名前</h5>
-    <div class="col-12 border-bottom"><%= @contact.name %></div>
+    <div class="col-12 contact-contents"><%= @contact.name %></div>
     <h5 class="col-12 mt-3 text-body">メールアドレス</h5>
-    <div class="col-12 border-bottom"><%= @contact.email %></div>
+    <div class="col-12 contact-contents"><%= @contact.email %></div>
     <h5 class="col-12 mt-3 text-body">件名</h5>
-    <div class="col-12 border-bottom"><%= @contact.title %></div>
+    <div class="col-12 contact-contents"><%= @contact.title %></div>
     <h5 class="col-12 mt-3 text-body">お問い合わせ内容</h5>
-    <div class="col-12 border-bottom"><%= @contact.body %></div>
+    <div class="col-12 contact-contents"><%= @contact.body %></div>
     <%= form_for(@contact, url: public_contacts_path) do |f| %>
       <%= f.hidden_field :name %>
       <%= f.hidden_field :email %>
