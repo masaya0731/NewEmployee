@@ -39,6 +39,11 @@
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1gjALBKxuyKU_9TFOMElKp1exEErPHncNeUVInMY7djs/edit?usp=sharing>
 
+## サンプルユーザー
+- 新規登録をせずログインで使用できます。
+- メールアドレス: a@a
+- パスワード: password
+
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
