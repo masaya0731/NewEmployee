@@ -272,6 +272,7 @@ header {
 // aboutページ
 .about-heading {
   display: inline-block;
+  text-align: center;
 }
 
 .kokuban-s4 {
@@ -279,6 +280,14 @@ header {
   color: #fff;
   margin: 0 auto;
   z-index: 100;
+}
+
+.about-image1 {
+  margin: 0 auto;
+  background-image: image-url("about-image1.jpg");
+  background-size: cover;
+  width: 600px;
+  height: 400px;
 }
 
 .sakura {
@@ -497,7 +506,7 @@ header {
 
 // ユーザーの過去の投稿一覧画面
 .kokuban-s12 {
-  width: 80%;
+  width: 90%;
   padding: 1em;
   border-radius: 3px;
   background: white;
