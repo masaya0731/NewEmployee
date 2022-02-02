@@ -275,7 +275,12 @@ header {
   text-align: center;
 }
 
+.about-text {
+  line-height: 30px;
+}
+
 .kokuban-s4 {
+  width: 90%;
   padding: 1em;
   color: #fff;
   z-index: 100;
@@ -285,17 +290,19 @@ header {
 .about-image1 {
   margin: 0 auto;
   background-image: image-url("about-image1.jpg");
-  background-size: cover;
-  width: 600px;
-  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70%;
+  height: 500px;
 }
 
 .about-image2 {
-  width: 600px;
+  width: 70%;
   height: 200px;
   background-image: image-url("about-image2.jpg");
   margin: 0 auto;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .sakura {
