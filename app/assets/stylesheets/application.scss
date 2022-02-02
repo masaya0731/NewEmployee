@@ -426,6 +426,16 @@ header {
   animation-delay: 4s;
 }
 
+@media screen and (max-width:991px) {
+  .about-image1 {
+    height: 300px;
+  }
+
+  .about-image2 {
+    height: 100px;
+  }
+}
+
 // マイページ
 .customer_plofile_image {
   border-radius: 50%;
