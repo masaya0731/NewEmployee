@@ -11,6 +11,6 @@ class Public::NotificationsController < ApplicationController
     # 通知を全削除
     @notifications = current_customer.passive_notifications.destroy_all
     redirect_to public_notifications_path
-    flash[:danger] = "通知を全て削除しました"
+    flash[:danger] = '通知を全て削除しました'
   end
 end
