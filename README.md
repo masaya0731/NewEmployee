@@ -40,8 +40,12 @@
 <https://docs.google.com/spreadsheets/d/1gjALBKxuyKU_9TFOMElKp1exEErPHncNeUVInMY7djs/edit?usp=sharing>
 
 ## サンプルユーザー
-新規登録をせずログインで使用できます。
+新規登録をせずログインで使用できます。通知機能を確認したい場合ユーザーを切り替えてコメントを送信してください。
+- サンプルユーザー1
 - メールアドレス: a@a
+- パスワード: password
+- サンプルユーザー2
+- メールアドレス: b@b
 - パスワード: password
 
 ## 開発環境
