@@ -9,9 +9,9 @@ class Post < ApplicationRecord
   belongs_to :customer, optional: true
   belongs_to :category, optional: true
 
+  validates :category_id, presence: true
   validates :title, presence: true
   validates :body, presence: true
-  validates :category_id, presence: true
 
   def save_tag(sent_tags)
     # タグが存在していれば、タグの名前を配列として全て取得
