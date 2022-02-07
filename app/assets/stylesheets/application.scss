@@ -217,6 +217,11 @@ a:hover {
   display: inline-block;
 }
 
+// バリデーションエラー時のレイアウトの崩れ防止
+.field_with_errors {
+  display: contents;
+}
+
 // ヘッダー
 header {
   width: 96%;
@@ -368,6 +373,9 @@ header {
 
 .about-text {
   line-height: 30px;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .kokuban-s4 {
