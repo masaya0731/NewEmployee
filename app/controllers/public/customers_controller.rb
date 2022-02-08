@@ -1,5 +1,5 @@
 class Public::CustomersController < ApplicationController
-  before_action :authenticate_customer!, except: %i[show post_all]
+  before_action :authenticate_customer!, except: %i[show post_all post_search]
 
   def show
     @customer = Customer.find(params[:id])
@@ -15,6 +15,20 @@ class Public::CustomersController < ApplicationController
              else
                @customer.posts.all.page(params[:page]).per(20).reverse_order
              end
+  end
+
+  def post_search
+    # ユーザーの過去の投稿検索
+    @customer = Customer.find(params[:id])
+    @keywords = params[:keyword]
+    @posts = @customer.posts.page(params[:page]).per(20).reverse_order
+    split_keywords = @keywords.split(/[[:blank:]]+/)
+    split_keywords.each do |word|
+      @posts = @posts.eager_load([:category, { tag_maps: :tag }]).where([
+                                                                          'posts.title LIKE ? OR posts.body LIKE ? OR categories.name LIKE ? OR tags.name LIKE ?',
+                                                                          "%#{word}%", "%#{word}%", "%#{word}%", "%#{word}%"
+                                                                        ])
+    end
   end
 
   def edit

@@ -1,0 +1,28 @@
+<div class="container" style="margin-top: 50px;">
+  <div class="row">
+    <div class="kokuban-s12">
+      <h4 class="text-body text-center border-bottom h3 mt-3">
+        <% if @keywords.empty? %>
+          <%= link_to public_customer_path(@customer) do%>
+            <%= attachment_image_tag @customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "customer_profile_image" %>
+            <%= @customer.name %>
+          <% end %>
+          さんのすべての投稿<span class="post-search-count ml-3">(<%= @posts.count %>件)</span><br>
+          <div class="mb-3"><%= render 'public/search/form' %></div>
+        <% else %>
+          <%= link_to public_customer_path(@customer) do%>
+            <%= attachment_image_tag @customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "customer_profile_image" %>
+            <%= @customer.name %>
+          <% end %>
+          さんの"<%= @keywords %>" を含む投稿<span class="post-search-count ml-3">(<%= @posts.count %>件)</span><br>
+          <div class="mb-3"><%= render 'public/search/form' %></div>
+        <% end %>
+      </h4>
+      <% if @posts.empty? %>
+        <h5 class="text-center">該当する投稿はありません</h5>
+      <% else %>
+        <%= render 'public/posts/index', post: @posts %>
+      <% end %>
+    </div>
+  </div>
+</div>
