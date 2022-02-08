@@ -60,6 +60,13 @@ a:hover {
   width: 320px;
 }
 
+@media screen and (max-width:768px) {
+
+  .word-search {
+    width: 250px;
+  }
+}
+
 // メニューボタン
 #g-nav{
   /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
@@ -639,6 +646,15 @@ header {
 
 .customer_profile_image {
   border-radius: 50%;
+}
+
+.post-search {
+  width: 250px;
+  font-size: 15px;
+}
+
+.post-search-btn {
+  height: 35px;
 }
 
 // 新規投稿画面

@@ -6,7 +6,17 @@
           <%= attachment_image_tag @customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "customer_profile_image" %>
           <%= @customer.name %>
         <% end %>
-        <span>さんのすべての投稿<span class="post-all-count ml-3">(<%= @posts.count %>件)</span></span>
+        <span>さんのすべての投稿<span class="post-all-count ml-3">(<%= @posts.count %>件)</span></span><br>
+        <%= form_with url: public_customers_post_search_path, method: :get, local: true do |f| %>
+          <div class="input-group post-search mx-auto">
+            <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "form-control" %>
+            <span class="input-group-append post-search-btn">
+              <%= button_tag type: 'submit', class: "btn btn-outline-secondary text-white" do %>
+                <i class="fas fa-search"></i>
+              <% end %>
+            </span>
+          </div>
+        <% end %>
       </div>
       <div class="mb-3">
         <%= link_to "新しい順", public_customers_post_all_path %>
