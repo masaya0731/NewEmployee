@@ -22,7 +22,7 @@
         <h5 class="text-center">該当する投稿はありません</h5>
       <% else %>
         <% @posts.each do |post| %>
-          <span>投稿日</span><%= post.created_at.strftime('%Y/%m/%d') %>
+          <div class="mt-4"><span>投稿日</span><%= post.created_at.strftime('%Y/%m/%d') %></div>
           <%= link_to public_post_path(post.id) do %>
             <p class="mt-3 h5"><%= post.title %></p><br>
           <% end %>
