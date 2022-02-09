@@ -7,7 +7,7 @@
             <%= attachment_image_tag @customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "customer_profile_image" %>
             <%= @customer.name %>
           <% end %>
-          さんのすべての投稿<span class="post-search-count ml-3">(<%= @posts.count %>件)</span><br>
+          <span>さんのすべての投稿<span class="post-search-count ml-3">(<%= @posts.count %>件)</span></span><br>
           <div class="mb-3"><%= render 'public/search/form' %></div>
         <% else %>
           <%= link_to public_customer_path(@customer) do%>
@@ -22,8 +22,10 @@
         <h5 class="text-center">該当する投稿はありません</h5>
       <% else %>
         <% @posts.each do |post| %>
-          <span class="mt-4"><span>投稿日</span><%= post.created_at.strftime('%Y/%m/%d') %></span>
-          <span class="ml-5">コメント数(<%= post.post_comments.count %>)</span>
+          <div class="mt-4">
+            <span>投稿日<%= post.created_at.strftime('%Y/%m/%d') %></span>
+            <span class="ml-5">コメント数(<%= post.post_comments.count %>)</span>
+          </div>
           <%= link_to public_post_path(post.id) do %>
             <p class="mt-3 h5"><%= post.title %></p><br>
           <% end %>
