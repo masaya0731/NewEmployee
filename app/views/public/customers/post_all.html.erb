@@ -18,6 +18,7 @@
       <% else %>
         <% @posts.each do |post| %>
           <span>投稿日</span><%= post.created_at.strftime('%Y/%m/%d') %>
+          <span class="ml-5">コメント数(<%= post.post_comments.count %>)</span>
           <%= link_to public_post_path(post.id) do %>
             <p class="mt-3 h5"><%= post.title %></p><br>
           <% end %>
