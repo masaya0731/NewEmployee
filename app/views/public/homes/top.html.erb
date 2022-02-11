@@ -33,7 +33,7 @@
           <span><%= post.customer.name %>さん</span>
         <% end %>
         が<%= post.created_at.strftime('%Y/%m/%d') %>に投稿
-        <span class="ml-5">コメント数(<%= post.post_comments.count %>)</span>
+        <span class="ml-5"><i class="fas fa-comment"></i>(<%= post.post_comments.count %>)</span>
         <%= link_to public_post_path(post.id) do %>
           <p class="mt-3 h5 ml-3 top-post-title"><%= post.title %></p><br>
         <% end %>
