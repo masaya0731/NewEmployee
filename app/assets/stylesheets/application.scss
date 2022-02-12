@@ -219,11 +219,18 @@ a:hover {
   color:#fff;
   line-height: 50px;
 }
+
+// サクセスメッセージ
+.success-message {
+
+}
+
 // エラーメッセージ
 .error-message {
   display: inline-block;
   color: red;
 }
+
 
 // バリデーションエラー時のレイアウトの崩れ防止
 .field_with_errors {
