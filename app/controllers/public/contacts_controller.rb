@@ -5,6 +5,7 @@ class Public::ContactsController < ApplicationController
   end
 
   def confirm
+    # お問い合わせ内容確認ページ
     @contact = Contact.new(contact_params)
     render :new if @contact.invalid?
   end
@@ -24,6 +25,7 @@ class Public::ContactsController < ApplicationController
     end
   end
 
+  # お問い合わせ送信後のページ
   def complete; end
 
   private

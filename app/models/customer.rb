@@ -8,6 +8,7 @@ class Customer < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
+  # 通知機能のアソシエーション
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 

@@ -1,3 +1,4 @@
+  # エラーメッセージの日本語化
   ja:
     activerecord:
       attributes:

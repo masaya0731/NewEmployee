@@ -220,13 +220,13 @@ a:hover {
   line-height: 50px;
 }
 
-// サクセスメッセージ
-.success-message {
+// フラッシュメッセージ(ログイン、ログアウト)
+.login-message {
   z-index: 9999;
   color: white;
   height: 50px;
   line-height: 50px;
-  background-color: #222222;
+  background-color: #28a745;
   position: fixed;
   top: 90%;
   right: 45%;

@@ -11,6 +11,8 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
+
+  # 本番環境でエラー文を表示させるにはconfig.consider_all_requests_localのfalseをtrueにする
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
@@ -65,7 +67,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # お問い合わせ機能
+  # お問い合わせ機能(本番環境)
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     port: 587,
