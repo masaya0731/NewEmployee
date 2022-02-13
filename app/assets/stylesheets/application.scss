@@ -222,7 +222,16 @@ a:hover {
 
 // サクセスメッセージ
 .success-message {
-
+  z-index: 9999;
+  color: white;
+  height: 50px;
+  line-height: 50px;
+  background-color: #222222;
+  position: fixed;
+  top: 90%;
+  right: 45%;
+  margin: auto;
+  border-radius: 5px;
 }
 
 // エラーメッセージ
