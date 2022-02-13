@@ -1,3 +1,4 @@
+// スライドショー
 $(document).on('turbolinks:load',function () {
   $("#theTarget").skippr({
     transition : 'fade',
