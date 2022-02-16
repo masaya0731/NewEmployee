@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :customers, only: %i[show edit update]
     get '/customers/:id/post_all', to: 'customers#post_all', as: 'customers_post_all'
     get '/customers/:id/post_search', to: 'customers#post_search', as: 'customers_post_search'
+    get '/customers/:id/post_comment_all', to: 'customers#post_comment_all', as: 'customers_post_comment_all'
     resources :posts do
       resources :post_comments, only: %i[edit update create destroy]
     end
