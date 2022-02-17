@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_customer
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   # 新規登録後
@@ -24,12 +23,6 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name introduction profile_image])
-  end
-
-  def current_customer
-    if session[:customer_id]
-      @current_customer ||= Customer.find_by(id: session[:customer_id])
-    end
   end
 
 end
