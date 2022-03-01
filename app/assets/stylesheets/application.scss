@@ -398,6 +398,33 @@ header {
   padding-left: 100px;
 }
 
+//　新規登録ページ
+.kokuban-ss3 {
+  padding: 1em;
+  background-color: #006633;
+  color: #fff;
+  border: 8px solid #b2771f;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+  margin: 0 auto;
+  padding-left: 100px;
+}
+
+@media screen and (max-width:576px) {
+
+  .kokuban-ss3 {
+    width: 100%;
+    padding: 1em;
+    background-color: #006633;
+    color: #fff;
+    border: 8px solid #b2771f;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+    margin: 0 auto;
+    padding-left: 60px;
+  }
+}
+
 // aboutページ
 .about-heading {
   display: inline-block;
