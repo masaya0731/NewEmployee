@@ -4,7 +4,6 @@ class Public::CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
     @posts = @customer.posts.limit(5).reverse_order
-    @post_comment = @customer.post_comments
   end
 
   def post_all
@@ -20,6 +19,7 @@ class Public::CustomersController < ApplicationController
 
   def post_comment_all
     @customer = Customer.find(params[:id])
+    # ユーザーがコメントをした投稿を1ページ20件取得
     @post_comment = @customer.post_comments.page(params[:page]).per(20).reverse_order
   end
 
