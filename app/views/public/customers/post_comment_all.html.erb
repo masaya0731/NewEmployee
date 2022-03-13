@@ -1,0 +1,27 @@
+<div class="container" style="margin-top: 50px;">
+  <div class="row">
+    <div class="kokuban-s12">
+      <div class="text-center h3 mt-3 border-bottom pb-3">
+        <%= link_to public_customer_path(@customer) do%>
+          <%= attachment_image_tag @customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "customer_profile_image" %>
+          <%= @customer.name %>
+        <% end %>
+        <span>さんがコメントをした投稿<span class="post-all-count ml-3">(<%= @post_comment.count %>件)</span></span><br>
+      </div>
+      <% if @post_comment.empty? %>
+        <p>まだコメントをした投稿はありません</p>
+      <% else %>
+        <% @post_comment.each do |post_comment| %>
+          <%= link_to public_customer_path(post_comment.post.customer) do %>
+            <%= post_comment.post.customer.name %>
+          <% end %>
+          さんの投稿にコメントをしました
+          <%= link_to public_post_path(post_comment.post) do %>
+            <p class="mt-3 h5 border-bottom"><%= post_comment.post.title %></p><br>
+          <% end %>
+        <% end %>
+        <%= paginate @post_comment %>
+      <% end %>
+    </div>
+  </div>
+</div>

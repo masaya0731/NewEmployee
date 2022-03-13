@@ -1,9 +1,10 @@
 class Public::CustomersController < ApplicationController
-  before_action :authenticate_customer!, except: %i[show post_all post_search]
+  before_action :authenticate_customer!, except: %i[show post_all post_comment_all post_search]
 
   def show
     @customer = Customer.find(params[:id])
     @posts = @customer.posts.limit(5).reverse_order
+    @post_comment = @customer.post_comments
   end
 
   def post_all
@@ -15,6 +16,11 @@ class Public::CustomersController < ApplicationController
              else
                @customer.posts.all.page(params[:page]).per(20).reverse_order
              end
+  end
+
+  def post_comment_all
+    @customer = Customer.find(params[:id])
+    @post_comment = @customer.post_comments.page(params[:page]).per(20).reverse_order
   end
 
   def post_search
