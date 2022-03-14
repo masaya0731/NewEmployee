@@ -6,12 +6,17 @@
           <%= attachment_image_tag @customer, :profile_image, size: "50x50", fallback: "no_image.jpg", class: "customer_profile_image" %>
           <%= @customer.name %>
         <% end %>
-        <span>さんがコメントをした投稿<span class="post-all-count ml-3">(<%= @post_comment.count %>件)</span></span><br>
+        <span>さんがコメントをした投稿<span class="post-all-count ml-3">(<%= @post_comments.count %>件)</span></span><br>
       </div>
-      <% if @post_comment.empty? %>
+      <div class="mb-3">
+        <%= link_to "新しい順", public_customers_post_comment_all_path %>
+        <span class="mx-2">|</span><%= link_to "古い順", public_customers_post_comment_all_path(sort_create: "true") %><br>
+      </div>
+      <% if @post_comments.empty? %>
         <p>まだコメントをした投稿はありません</p>
       <% else %>
-        <% @post_comment.each do |post_comment| %>
+        <% @post_comments.each do |post_comment| %>
+          <%= post_comment.updated_at.strftime('%Y/%m/%d')%>に
           <%= link_to public_customer_path(post_comment.post.customer) do %>
             <%= post_comment.post.customer.name %>
           <% end %>
@@ -20,7 +25,7 @@
             <p class="mt-3 h5 border-bottom"><%= post_comment.post.title %></p><br>
           <% end %>
         <% end %>
-        <%= paginate @post_comment %>
+        <%= paginate @post_comments %>
       <% end %>
     </div>
   </div>

@@ -20,7 +20,11 @@ class Public::CustomersController < ApplicationController
   def post_comment_all
     @customer = Customer.find(params[:id])
     # ユーザーがコメントをした投稿を1ページ20件取得
-    @post_comment = @customer.post_comments.page(params[:page]).per(20).reverse_order
+    @post_comments = if params[:sort_create]
+                       @customer.post_comments.page(params[:page]).per(20)
+                     else
+                       @customer.post_comments.page(params[:page]).per(20).reverse_order
+                     end
   end
 
   def post_search
