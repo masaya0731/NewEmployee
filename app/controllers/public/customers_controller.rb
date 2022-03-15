@@ -19,7 +19,7 @@ class Public::CustomersController < ApplicationController
 
   def post_comment_all
     @customer = Customer.find(params[:id])
-    # ユーザーがコメントをした投稿を1ページ20件取得
+    # ユーザーがコメントをした投稿を1ページ20件取得(ソート機能)
     @post_comments = if params[:sort_create]
                        @customer.post_comments.page(params[:page]).per(20)
                      else

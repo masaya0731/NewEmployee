@@ -1,3 +1,4 @@
+<!-- ユーザーごとの投稿検索フォーム -->
 <%= form_with url: public_customers_post_search_path, method: :get, local: true do |f| %>
   <div class="input-group post-search mx-auto">
     <%= f.text_field :keyword, placeholder: "#{@customer.name}さんの投稿を検索する", class: "form-control" %>
